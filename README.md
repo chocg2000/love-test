@@ -35,13 +35,16 @@ $quoted = '"' + $path + '"'
 Start-Process -FilePath "msedge.exe" -ArgumentList $quoted
 ```
 
-## 다음 단계 (진행 중, 미결정)
+## 다음 단계 (진행 중)
 
-"실제 서비스로 배포"를 진행하기로 했고, 배포 플랫폼을 고르는 중이었음. 이 환경엔 `gh` CLI가 설치되어 있지 않아, 로그인이 필요한 단계(계정 생성/저장소 생성 등)는 사용자가 브라우저에서 직접 해야 함.
+배포 플랫폼으로 **GitHub Pages** 선택 완료.
 
-후보 플랫폼:
-1. **GitHub Pages** (추천) — 무료, 영구 지속, 도메인 연결 쉬움. GitHub 계정 필요, 저장소는 브라우저에서 간단히 생성(약 30초) 후 git push로 배포.
-2. **Netlify Drop** — 로그인 없이 폴더를 브라우저에 드래그&드롭하면 즉시 URL 발급. 가장 빠르지만 로그인 안 하면 임시 URL(나중에 이메일 가입으로 영구화 가능).
-3. **Vercel** — GitHub 연동 배포, 이후 코드 수정 시 자동 재배포 편리.
+완료된 것:
+- `git init` + `main` 브랜치로 첫 커밋 완료 (index.html, README.md)
 
-**돌아오면**: 위 3가지 중 하나를 선택하고, 선택한 플랫폼에 맞는 로그인/저장소 생성 단계를 안내받아 진행하면 됨.
+남은 것 (사용자가 브라우저에서 직접 해야 함, `gh` CLI 미설치):
+1. https://github.com/new 에서 새 저장소 생성 (Public, 초기화 옵션 체크 해제)
+2. 생성된 저장소 URL(`https://github.com/{계정명}/{저장소명}.git`)을 알려주면 `git remote add origin ...` + `git push -u origin main`으로 push 진행
+3. push 후 저장소 Settings → Pages → Branch: main 으로 설정하면 `https://{계정명}.github.io/{저장소명}/` 에서 접속 가능
+
+이후 실제 배포 전 [배포 전 실제 값으로 교체해야 할 항목](#배포-전-실제-값으로-교체해야-할-항목)도 처리 필요.
