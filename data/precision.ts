@@ -1,0 +1,48 @@
+import { PrecisionTier, PrecisionConfig } from '@/types/test';
+
+export const PRECISION_CONFIGS: Record<PrecisionTier, PrecisionConfig> = {
+  speed: {
+    id: 'speed',
+    levelName: '하',
+    title: '스피드 초간단',
+    emoji: '⚡',
+    count: 12,
+    perAxis: 3,
+    time: '약 1분',
+    accuracy: '85% 신뢰도',
+    badge: '⚡ 12문항 스피드 진단',
+  },
+  standard: {
+    id: 'standard',
+    levelName: '중',
+    title: '표준 밸런스',
+    emoji: '🎯',
+    count: 24,
+    perAxis: 6,
+    time: '약 3분',
+    accuracy: '92% 신뢰도',
+    badge: '🎯 24문항 표준 진단',
+  },
+  deep: {
+    id: 'deep',
+    levelName: '상',
+    title: '정밀 심층',
+    emoji: '🔍',
+    count: 36,
+    perAxis: 9,
+    time: '약 5분',
+    accuracy: '96% 신뢰도',
+    badge: '🔍 36문항 정밀 심층 진단',
+  },
+  master: {
+    id: 'master',
+    levelName: '최상',
+    title: '마스터 초정밀',
+    emoji: '👑',
+    count: 48,
+    perAxis: 12,
+    time: '약 8분',
+    accuracy: '99.4% 신뢰도',
+    badge: '👑 48문항 마스터 초정밀 진단',
+  },
+};
